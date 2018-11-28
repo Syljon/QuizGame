@@ -1,5 +1,49 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #333;
+  background-color: #98ccd3;
+  height: 100vh;
+  width: 100%;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.startPage {
+  text-align: center;
+  border: 1px solid black;
+}
+.select_box {
+  width: 50%;
+  font-size: 1.5rem;
+  padding: 0 5% 4%;
+  margin: auto;
+}
+.select_control {
+  font-size: 1.5rem;
+  width: 100%;
+}
+.startbutton {
+  background-color: transparent;
+  color: #ebf0f6;
+  border: 3px solid #ebf0f6;
+  font-size: 2rem;
+  padding: 20px;
+  border-radius: 5px;
+}
+.startbutton:hover {
+  background-color: #132238;
+}
+.title-div {
+  text-align: center;
+}
+.title-heading {
+  font-family: "Oswald";
+  font-size: 5.5rem;
+}
+.dark {
+  color: #132238;
+}
+.light {
+  color: #364e68;
 }
