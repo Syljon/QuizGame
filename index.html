@@ -13,31 +13,33 @@
   </head>
   <body>
     <div class="container">
-      <section class="startPage">
+      <section id="startPage" class="startPage">
         <div class="title-div">
           <h1 class="title-heading dark">
             Quiz<span class="light">Time</span>
           </h1>
         </div>
         <div class="select_box">
-          <label for="">Select Category:</label><br />
-          <select class="select_control">
-            <option>Any</option>
-            <option>Easy</option>
-            <option>Medium</option>
-            <option>Hard</option>
+          <label for="">Select Difficulty:</label><br />
+          <select id="difficulty" class="select_control">
+            <option value="Any">Any</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
           </select>
         </div>
         <div class="select_box">
-          <label for="">Select Difficulty:</label>
-          <select class="select_control">
-            <option>Any</option>
-            <option>Film</option>
-            <option>Music</option>
-            <option>Video Games</option>
+          <label for="">Select Category:</label>
+          <select id="category" class="select_control">
+            <option value="Any">Any</option>
+            <option value="11">Film</option>
+            <option value="12">Music</option>
+            <option value="15">Video Games</option>
           </select>
         </div>
-        <button type="button" class="startbutton">START GAME</button>
+        <button onclick="getData(this)" type="button" class="startbutton">
+          START GAME
+        </button>
       </section>
     </div>
     <script src="./main.js"></script>
