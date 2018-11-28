@@ -4,10 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>QuizTime</title>
   </head>
   <body>
+    <div class="container">
+      <section class="startPage">
+        <div class="title-div">
+          <h1 class="title-heading dark">
+            Quiz<span class="light">Time</span>
+          </h1>
+        </div>
+        <div class="select_box">
+          <label for="">Select Category:</label><br />
+          <select class="select_control">
+            <option>Any</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+          </select>
+        </div>
+        <div class="select_box">
+          <label for="">Select Difficulty:</label>
+          <select class="select_control">
+            <option>Any</option>
+            <option>Film</option>
+            <option>Music</option>
+            <option>Video Games</option>
+          </select>
+        </div>
+        <button type="button" class="startbutton">START GAME</button>
+      </section>
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>
