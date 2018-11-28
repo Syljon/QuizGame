@@ -1,6 +1,7 @@
 const difficulty = document.getElementById("difficulty");
 const category = document.getElementById("category");
 const startPage = document.getElementById("startPage");
+const gameScreen = document.getElementById("gameScreen");
 let iteration = 0;
 let questions;
 function getData(e) {
@@ -18,6 +19,7 @@ function getData(e) {
   link = `https://opentdb.com/api.php?amount=10${cate}${diff}&type=multiple`;
   console.log(link);
   startPage.hidden = true;
+  gameScreen.hidden = false;
   fetch(`${link}`)
     .then(response => response.json())
     .then(response => {
@@ -28,5 +30,6 @@ function getData(e) {
 }
 
 function createGameScreen() {
+  //gameScreen.innerHTML = `${questions[iteration].question}`;
   console.log(questions[iteration]);
 }
