@@ -5,13 +5,14 @@ const gameScreen = document.getElementById("gameScreen");
 const scoreScreen = document.getElementById("scoreScreen");
 const question = document.getElementById("question");
 const buttons = document.querySelectorAll(".answer_button");
+const startbutton = document.getElementById("startbutton");
 const _score = document.getElementById("score");
 let iteration = 0;
 let questions;
 let score = 0;
 
-function getData(e) {
-  e.disabled = true;
+function getData() {
+  startbutton.disabled = true;
   let diff = "";
   let cate = "";
   const diffvalue = difficulty.options[difficulty.selectedIndex].value;
@@ -87,7 +88,7 @@ function btnClick(e) {
   iteration += 1;
   if (iteration >= 10) {
     console.log("Score");
-    createScoreScreen();
+    setTimeout(createScoreScreen, 500);
   } else {
     setTimeout(createGameScreen, 500);
   }
@@ -102,4 +103,12 @@ function addScore() {
   } else {
     score += 200;
   }
+}
+
+function resetGame() {
+  iteration = 0;
+  score = 0;
+  scoreScreen.hidden = true;
+  startPage.hidden = false;
+  startbutton.disabled = false;
 }
