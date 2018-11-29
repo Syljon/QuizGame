@@ -90,6 +90,16 @@ body {
   font-size: 1.5rem;
 }
 
+/* Score */
+.scoreScreen {
+  text-align: center;
+}
+
+.scoretext {
+  font-size: 4rem;
+  margin: 3%;
+}
+
 @media (max-width: 600px) {
   .container {
     width: 100%;
