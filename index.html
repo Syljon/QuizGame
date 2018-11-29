@@ -13,12 +13,10 @@
   </head>
   <body>
     <div class="container">
+      <div class="title-div">
+        <h1 class="title-heading dark">Quiz<span class="light">Time</span></h1>
+      </div>
       <section id="startPage" class="startPage">
-        <div class="title-div">
-          <h1 class="title-heading dark">
-            Quiz<span class="light">Time</span>
-          </h1>
-        </div>
         <div class="select_box">
           <label for="">Select Difficulty:</label><br />
           <select id="difficulty" class="select_control">
@@ -40,6 +38,23 @@
         <button onclick="getData(this)" type="button" class="startbutton">
           START GAME
         </button>
+      </section>
+      <section id="gameScreen" class="gameScreen" hidden>
+        <div class="question_box">
+          <h2 id="question" class="question">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Cupiditate, nihil distinctio facilis ea maiores alias totam sint
+            voluptate deleniti eveniet?
+          </h2>
+        </div>
+        <div class="answers_box">
+          <button class="answer_button">Lorem ipsum dolor sit amet.</button>
+          <button class="answer_button">Lorem ipsum dolor sit.</button>
+          <button class="answer_button">
+            Lorem ipsum dolor sit amet consectetur.
+          </button>
+          <button class="answer_button">Lorem, ipsum dolor.</button>
+        </div>
       </section>
     </div>
     <script src="./main.js"></script>
