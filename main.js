@@ -2,14 +2,17 @@ const difficulty = document.getElementById("difficulty");
 const category = document.getElementById("category");
 const startPage = document.getElementById("startPage");
 const gameScreen = document.getElementById("gameScreen");
+const scoreScreen = document.getElementById("scoreScreen");
 const question = document.getElementById("question");
 const buttons = document.querySelectorAll(".answer_button");
+const startbutton = document.getElementById("startbutton");
+const _score = document.getElementById("score");
 let iteration = 0;
 let questions;
 let score = 0;
 
-function getData(e) {
-  e.disabled = true;
+function getData() {
+  startbutton.disabled = true;
   let diff = "";
   let cate = "";
   const diffvalue = difficulty.options[difficulty.selectedIndex].value;
@@ -35,33 +38,42 @@ function getData(e) {
 
 function createGameScreen() {
   console.log("Diff:", questions[iteration].difficulty, "Score:", score);
-  question.innerHTML = questions[iteration].question;
   let answers = [
     questions[iteration].correct_answer,
     questions[iteration].incorrect_answers[0],
     questions[iteration].incorrect_answers[1],
     questions[iteration].incorrect_answers[2]
   ];
-  console.log(answers[0]);
+  console.log("Answer:", answers[0]);
   //gameScreen.innerHTML = `${questions[iteration].question}`;
+  console.log(questions[iteration]);
+
+  question.innerHTML = questions[iteration].question;
   buttons.forEach(btn => {
     btn.disabled = false;
     btn.style = "background-color: #132238;";
-    /* let rnmb = Math.floor(Math.random() * 2); */
-    if (Math.floor(Math.random() * 2) == 1) {
+    let rnmb = Math.floor(Math.random() * 2);
+    if (rnmb == 1) {
       const value = answers.shift();
       btn.value = `${value}`;
       btn.innerHTML = `${value}`;
     } else {
       const value = answers.pop();
-      btn.innerHTML = `${value}`;
+      btn.value = `${value}`;
       btn.innerHTML = `${value}`;
     }
     btn.addEventListener("click", btnClick);
   });
 }
 
+function createScoreScreen() {
+  gameScreen.hidden = true;
+  _score.innerHTML = score;
+  scoreScreen.hidden = false;
+}
+
 function btnClick(e) {
+  console.log("TEST", e.target.value, questions[iteration].correct_answer);
   if (e.target.value == questions[iteration].correct_answer) {
     console.log("Win");
     e.target.style = "background-color: #1ec81e;";
@@ -76,6 +88,7 @@ function btnClick(e) {
   iteration += 1;
   if (iteration >= 10) {
     console.log("Score");
+    setTimeout(createScoreScreen, 500);
   } else {
     setTimeout(createGameScreen, 500);
   }
@@ -90,4 +103,12 @@ function addScore() {
   } else {
     score += 200;
   }
+}
+
+function resetGame() {
+  iteration = 0;
+  score = 0;
+  scoreScreen.hidden = true;
+  startPage.hidden = false;
+  startbutton.disabled = false;
 }
