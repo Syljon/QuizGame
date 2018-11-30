@@ -23,7 +23,7 @@ function getData() {
   if (catevalue !== "Any") {
     cate = `&category=${catevalue}`;
   }
-  link = `https://opentdb.com/api.php?amount=10${cate}${diff}&type=multiple`;
+  let link = `https://opentdb.com/api.php?amount=10${cate}${diff}&type=multiple`;
   console.log(link);
   fetch(`${link}`)
     .then(response => response.json())
@@ -38,7 +38,7 @@ function getData() {
 
 function createGameScreen() {
   console.log("Diff:", questions[iteration].difficulty, "Score:", score);
-  let answers = [
+  const answers = [
     questions[iteration].correct_answer,
     questions[iteration].incorrect_answers[0],
     questions[iteration].incorrect_answers[1],
@@ -54,14 +54,12 @@ function createGameScreen() {
     btn.style = "background-color: #132238;";
     let rnmb = Math.floor(Math.random() * 2);
     if (rnmb == 1) {
-      const value = answers.shift();
-      btn.value = `${value}`;
-      btn.innerHTML = `${value}`;
+      var value = answers.shift();
     } else {
-      const value = answers.pop();
-      btn.value = `${value}`;
-      btn.innerHTML = `${value}`;
+      var value = answers.pop();
     }
+    btn.value = `${value}`;
+    btn.innerHTML = `${value}`;
     btn.addEventListener("click", btnClick);
   });
 }
@@ -95,7 +93,7 @@ function btnClick(e) {
 }
 
 function addScore() {
-  let iteration_difficulty = questions[iteration].difficulty;
+  const iteration_difficulty = questions[iteration].difficulty;
   if (iteration_difficulty == "easy") {
     score += 50;
   } else if (iteration_difficulty == "medium") {
