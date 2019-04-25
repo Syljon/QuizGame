@@ -1,4 +1,4 @@
 # QuizTime
 ---
 Quiz Game created with Javascript and https://opentdb.com/
-[Live](https://syljon.github.io/QuizTime/)
+You can play [here](https://syljon.github.io/QuizTime/)
